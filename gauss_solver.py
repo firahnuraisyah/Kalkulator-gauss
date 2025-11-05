@@ -1,0 +1,22 @@
+class GaussSolver:
+    def __init__(self):
+        self.matrix = []
+        self.result = []
+
+    def input_matrix(self):
+        pass
+
+    def normalize(self):
+        pass
+
+    def eliminate(self):
+        pass
+
+    def back_substitution(self):
+        pass
+
+    def analyze_result(self):
+        pass
+
+    def save_to_file(self):
+        pass
