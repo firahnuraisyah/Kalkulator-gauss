@@ -1,4 +1,4 @@
-#tugas
+#kerja tugas
 class GaussSolver:
     def __init__(self):
         self.matrix = []
