@@ -17,8 +17,12 @@ class GaussSolver:
     def back_substitution(self):
         pass
 
+    def show_process(self):
+        pass
+
     def analyze_result(self):
         pass
+
 
     def save_to_file(self):
         pass
