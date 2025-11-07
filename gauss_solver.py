@@ -3,7 +3,6 @@ class GaussSolver:
         self.matrix = []
         self.result = []
 
-    #testimoni
     def input_matrix(self):
         pass
 
