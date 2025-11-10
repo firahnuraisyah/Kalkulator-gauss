@@ -1,5 +1,4 @@
-import sys
-from gauss_solver import input_matrix, normalize, eliminate, back_substitution, analyze_result, save_to_file
+from gauss_solver import GaussSolver
 
 class App:
     def __init__(self):
