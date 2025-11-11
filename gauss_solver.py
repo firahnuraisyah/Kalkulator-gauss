@@ -1,9 +1,10 @@
+import numpy
 class GaussSolver:
     def __init__(self):
         self.matrix = []
         self.result = []
 
-    def input_matrix(self):
+    def input_ordo_matrix(self):
         pass
 
     def normalize(self):
@@ -20,7 +21,6 @@ class GaussSolver:
 
     def analyze_result(self):
         pass
-
 
     def save_to_file(self):
         pass
