@@ -1,5 +1,5 @@
-import numpy
-
+import numpy as np
+import datetime
 
 class GaussSolver:
     def __init__(self):
@@ -65,7 +65,22 @@ class GaussSolver:
         pass
 
     def analyze_result(self):
-        pass
+        if not isinstance(self.matrix, np.ndarray):
+            print("Matriks belum siap untuk analisis.")
+            return
+        A = self.matrix[:, :-1]
+        rank_A = np.linalg.matrix_rank(A)
+        rank_Ab = np.linalg.matrix_rank(self.matrix)
+        n = A.shape[1]
+
+        print("\n===== ANALISIS HASIL =====")
+        if rank_A < rank_Ab:
+            print("➡ Sistem tidak memiliki solusi (inkonsisten).")
+            hasil = "Tidak ada solusi (inkonsisten)."
+        elif rank_A == rank_Ab == n:
+            print("➡ Sistem memiliki solusi tunggal.")
+            hasil = "Sistem memiliki solusi tunggal."
+        self.history.append("\nAnalisis Hasil:\n" + hasil)
 
     def save_to_file(self):
         pass
