@@ -56,7 +56,35 @@ class GaussSolver:
         pass
 
     def eliminate(self):
-        pass
+        if not isinstance(self.matrix, (list, np.ndarray)):
+            print("Matriks belum diinput.")
+            return None
+        if not self.is_numpy:
+            self.matrix = np.array(self.matrix, dtype=float)
+
+        A = self.matrix.copy()
+        n = self.K
+        self.history.append("\nTahap Eliminasi:")
+        for i in range(n):
+            if A[i, i] == 0:
+                for j in range(i + 1, n):
+                    if A[j, i] != 0:
+                        A[[i, j]] = A[[j, i]]
+                        print(f"\nBaris {i+1} ditukar dengan baris {j+1} karena pivot = 0.")
+                        self.history.append(f"Baris {i+1} ditukar dengan baris {j+1}.")
+                        break
+            pivot = A[i, i]
+            if pivot == 0:
+                print("Tidak dapat diselesaikan (pivot nol setelah pertukaran).")
+                self.history.append("Pivot nol setelah pertukaran.")
+                return None
+            A[i] = A[i] / pivot
+            for j in range(i + 1, n):
+                faktor = A[j, i]
+                A[j] = A[j] - faktor * A[i]
+            self.history.append(f"\nSetelah eliminasi kolom {i+1}:\n{A}")
+        self.matrix = A  
+        return A
 
     def back_substitution(self):
         pass
