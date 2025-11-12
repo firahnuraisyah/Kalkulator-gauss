@@ -53,7 +53,34 @@ class GaussSolver:
             break       
 
     def normalize(self):
-        pass
+        list_data_input = []
+        print(f"\nMasukkan koefisien untuk {self.K} baris dan {self.B} variabel:")
+        for baris_ke in range(self.B):
+            data_satu_matriks = []
+            for kolom_ke in range(self.K + 1):
+                while True:
+                    try:
+                        if kolom_ke < self.K:
+                            prompt = f"Koefisien baris {baris_ke+1}, kolom {kolom_ke+1}: "
+                        else:
+                            prompt = f"Hasil (sisi kanan) baris {baris_ke+1}: "
+                        nilai = float(input(prompt))
+                        data_satu_matriks.append(nilai)
+                        break
+                    except ValueError:
+                        print("Harap Masukkan Angka.")
+            list_data_input.append(data_satu_matriks)
+            
+        try:
+            self.matrix = np.array(list_data_input, dtype=float)
+            self.is_numpy = True
+            print("\nMatriks disimpan sebagai NumPy Array (Komputasi Cepat).")
+        except NameError:
+            self.matrix = list_data_input
+            self.is_numpy = False
+            print("\nMatriks disimpan sebagai List Bersarang (NumPy tidak ditemukan).")
+        
+        self.history.append("Matriks Awal:\n" + str(self.matrix))
 
     def eliminate(self):
         if not isinstance(self.matrix, (list, np.ndarray)):
