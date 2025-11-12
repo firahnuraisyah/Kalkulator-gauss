@@ -87,7 +87,15 @@ class GaussSolver:
         return A
 
     def back_substitution(self):
-        pass
+        if not isinstance(self.matrix, np.ndarray):
+            print("Data tidak valid untuk substitusi.")
+            return None
+        A = self.matrix
+        n = self.K
+        x = np.zeros(n)
+        self.history.append("\nTahap Substitusi Mundur:")
+        for i in range(n - 1, -1, -1):
+            x[i] = A[i, -1] - np.sum(A[i, i+1:n] * x[i+1:n])
 
     def show_process(self):
         pass
