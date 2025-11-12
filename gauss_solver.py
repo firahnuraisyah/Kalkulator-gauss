@@ -125,7 +125,9 @@ class GaussSolver:
             x[i] = A[i, -1] - np.sum(A[i, i+1:n] * x[i+1:n])
 
     def show_process(self):
-        pass
+        print("\n===== Proses Komputasi =====")
+        for step in self.history:
+            print(step)
 
     def analyze_result(self):
         if not isinstance(self.matrix, np.ndarray):
