@@ -146,4 +146,10 @@ class GaussSolver:
         self.history.append("\nAnalisis Hasil:\n" + hasil)
 
     def save_to_file(self):
-        pass
+        nama_file = "hasil.txt"
+        with open(nama_file, "a", encoding="utf-8") as f:
+            f.write(f"\n===== Riwayat Eksekusi - {datetime.datetime.now()} =====\n")
+            for step in self.history:
+                f.write(step + "\n")
+            f.write("\n" + "="*60 + "\n")
+        print(f"\nSemua hasil berhasil disimpan ke file '{nama_file}'.")
