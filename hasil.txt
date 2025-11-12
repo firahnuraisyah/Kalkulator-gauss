@@ -1,0 +1,30 @@
+
+===== Riwayat Eksekusi - 2025-11-12 12:05:42.277143 =====
+Matriks Awal:
+[[ 2.  2.  3.  7.]
+ [ 4.  5.  1. 12.]
+ [ 2.  2.  5. 16.]]
+
+Tahap Eliminasi:
+
+Setelah eliminasi kolom 1:
+[[ 1.   1.   1.5  3.5]
+ [ 0.   1.  -5.  -2. ]
+ [ 0.   0.   2.   9. ]]
+
+Setelah eliminasi kolom 2:
+[[ 1.   1.   1.5  3.5]
+ [ 0.   1.  -5.  -2. ]
+ [ 0.   0.   2.   9. ]]
+
+Setelah eliminasi kolom 3:
+[[ 1.   1.   1.5  3.5]
+ [ 0.   1.  -5.  -2. ]
+ [ 0.   0.   1.   4.5]]
+
+Tahap Substitusi Mundur:
+
+Analisis Hasil:
+Sistem memiliki solusi tunggal.
+
+============================================================

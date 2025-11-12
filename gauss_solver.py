@@ -123,7 +123,12 @@ class GaussSolver:
         self.history.append("\nTahap Substitusi Mundur:")
         for i in range(n - 1, -1, -1):
             x[i] = A[i, -1] - np.sum(A[i, i+1:n] * x[i+1:n])
-
+        solusi_text = []
+        for i in range(n):
+            solusi_text.append(f"x{i+1} = {x[i]:.4f}")
+        self.history.append("\n".join(solusi_text))
+        return x
+    
     def show_process(self):
         print("\n===== Proses Komputasi =====")
         for step in self.history:
